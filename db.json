@@ -1,6 +1,28 @@
 {
-  "tabs": {
-    "currentTab": "all"
-  },
-  "tasks": []
+    "tasks": [
+        {
+            "id": "e167",
+            "title": "Coding",
+            "description": "Coding",
+            "category": "meeting",
+            "priority": "medium",
+            "startTime": "18:57",
+            "endTime": "06:57",
+            "date": "2025-07-24",
+            "color": "blue",
+            "isCompleted": false
+        },
+        {
+            "id": "115f",
+            "title": "Workout",
+            "description": "Workout",
+            "category": "development",
+            "priority": "high",
+            "startTime": "07:58",
+            "endTime": "19:58",
+            "date": "2025-07-24",
+            "color": "green",
+            "isCompleted": false
+        }
+    ]
 }

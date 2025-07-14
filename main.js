@@ -1,3 +1,4 @@
+// main.js
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
@@ -12,6 +13,7 @@ const searchInput = $(".search-input")
 const toastContainer = $("#toast-container")
 const elementModalOverlay = $(".modal-overlay")
 const tasksAPI = "http://localhost:3000/tasks"
+
 
 let currentEditId = null
 
@@ -119,9 +121,9 @@ todoForm.onsubmit = async (e) => {
 
     const tasks = await fetchTasks()
     const duplicate = tasks.some(
-        (task) =>
-            task.title.toLowerCase() === formData.title.toLowerCase() &&
-            task.id !== currentEditId
+        (t) =>
+            t.title.toLowerCase() === formData.title.toLowerCase() &&
+            t.id !== currentEditId
     )
     if (duplicate) {
         alert("Task đã tồn tại!")
@@ -173,11 +175,9 @@ todoList.onclick = async (e) => {
 
     if (deleteBtn) {
         const id = deleteBtn.dataset.id
-        console.log(id)
         if (confirm("Bạn có chắc muốn xóa?")) {
             await fetch(`${tasksAPI}/${id}`, { method: "DELETE" })
             renderTasks()
-            popupToast(true)
         }
     }
 
